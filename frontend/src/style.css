@@ -1,0 +1,413 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  color: #424242;
+
+  .wf-active & {
+    font-family: 'BrandonGrotesque Regular', serif;
+  }
+}
+
+#root {
+  position: static;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.preload-overlay{
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: black url('/images/pattern_broken_noise.png') repeat center top;
+    transition: transform 450ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 50ms;
+    span{
+        position: absolute;
+        left: 0;
+        top: calc(50% + 50px);
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+        z-index: 20;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+}
+
+.preloader-type{
+    position: absolute;
+    top: calc(50% + 50px);
+    left: calc(50% - 111px);
+    width: 212px;
+    height: 40px;
+}
+.spinner{
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+    width: 64px;
+    height: 64px;
+    transform-origin: center;
+    transition: transform 450ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 60ms;
+    animation-name: spin;
+    animation-duration: 1818ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    &.small{
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.loaded{
+    .preload-overlay{
+        transform: translate3d(0, 100%, 0);
+    }
+    .container .header{
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.container .header, .container .footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container .header {
+  height: calc(100% - 160px);
+  padding-top: 4.5625rem;
+  background: url('/images/bg_desktop.jpg') repeat center top;
+  background-position-x: 0;
+  transform: translate3d(0, -30px, 0);
+  transition: transform 410ms cubic-bezier(0.455, 0.030, 0.515, 0.955) 50ms;
+  @media (max-width: 600px) {
+    height: calc(100% - 100px);
+  }
+}
+
+.container .footer {
+  height: 100%;
+  background: black;
+  color: white;
+  padding-top: 16rem;
+  padding-bottom: 22rem;
+}
+
+.header-bar,
+.container .footer {
+  background: black url('/images/pattern_broken_noise.png') repeat center top;
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background: black url('/images/pattern_broken_noise_@2X.png') repeat center top;
+    background-size: 50%;
+  }
+}
+
+.header-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 1.2rem 0;
+  z-index: 12;
+}
+
+.header-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.tutorial-albums {
+  font-family: "BrandonGrotesque LightItalic", sans-serif;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 25px;
+  left: 26%;
+  width: 6rem;
+
+  img {
+    transform: rotateZ(-53deg) rotateY(180deg);
+    width: 40%;
+  }
+
+  p {
+    position: absolute;
+    top: 45%;
+    left: 38%;
+    width: 7rem;
+  }
+
+  .prompt-2 & {
+    opacity: 0;
+  }
+
+
+  @media (max-width: 800px) {
+   left: 10%;
+  }
+  @media (max-width: 600px) {
+   left: 4%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.footer-content {
+  position: relative;
+
+  > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-size: 0.8rem;
+
+    @media (max-width: 400px) {
+      font-size: 0.5rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: underline;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 0.6rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    @media (min-width: 500px) {
+        /*padding:1rem 1.6rem;*/
+    }
+  }
+}
+
+.footer-footer {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 0.6rem;
+}
+.footer-thanks {
+  color: #9d9d9d;
+  margin: 1.4rem 0 0;
+  padding: 0 1rem;
+
+  p:first-child {
+    margin: 0 0 0.4rem;
+    text-transform: uppercase;
+    color: #5f5f5f;
+  };
+}
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0.8rem;
+
+    &:nth-child(2) img {
+      width: 4.5rem;
+    }
+    &:nth-child(3) img {
+      width: 5rem;
+    }
+
+    @media (min-width: 600px) {
+        margin: 0 1rem;
+        letter-spacing: 0.15em;
+    }
+    @media (min-width: 800px) {
+        &:nth-child(2) img {
+          width: 6.5rem;
+        }
+        &:nth-child(3) img {
+          width: 7rem;
+        }
+        margin: 0 2rem;
+    }
+  }
+
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+
+  span {
+    margin: 0 0 0.4rem;
+    text-transform: uppercase;
+    color: #a3a3a3;
+  }
+  img {
+    width: 8rem;
+    @media (min-width: 800px) {
+      width: 10rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    > div {
+      margin: 0 0.2rem;
+      &:nth-child(2) img {
+        width: 2.8rem;
+      };
+      &:nth-child(3) img {
+        width: 4rem;
+      };
+    }
+    img {
+      width: 4rem;
+    }
+  }
+}
+
+.special-thanks {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0 4em;
+  width: 100%;
+  font-size: 0.6rem;
+  @media (min-width: 800px) {
+      font-size: 0.7rem;
+      max-width: 66%;
+  }
+  .thanks{
+    font-weight: 600;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    opacity: 0.6;
+    margin: 0.4em 0;
+    @media (min-width: 600px) {
+        letter-spacing: 0.1em;
+    }
+  }
+  .names{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 0.8em;
+    @media (min-width: 600px) {
+        letter-spacing: 0.06em;
+    }
+  }
+}
+
+.landscape-overlay{
+    pointer-events: none;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    background: black url('/images/pattern_broken_noise.png') repeat center top;
+
+    @media only screen
+    and (max-height : 500px)
+    and (max-width : 800px)
+    and (orientation : landscape) {
+      display: block;
+    }
+
+    span{
+        position: absolute;
+        left: 0;
+        top: calc(50% + 50px);
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+}
+
+.landscape-logo{
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+
+    &.small{
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+      width: 80px;
+      height: 80px;
+    }
+}

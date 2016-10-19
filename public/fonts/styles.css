@@ -1,0 +1,31 @@
+
+/*@font-face {
+    font-family:"BrandonGrotesque Black";
+    src: url(/fonts/BrandonGrotesque/BrandonGrotesque-Black.otf);
+    font-weight:normal;
+    font-style:normal;
+}*/
+@font-face {
+    font-family:"BrandonGrotesque Bold";
+    src: url(/fonts/BrandonGrotesque/BrandonGrotesque-Bold.otf);
+    font-weight:bold;
+    font-style:normal;
+}
+/*@font-face {
+    font-family:"BrandonGrotesque Medium";
+    src: url(/fonts/BrandonGrotesque/BrandonGrotesque-Medium.otf);
+    font-weight:normal;
+    font-style:normal;
+}*/
+@font-face {
+    font-family:"BrandonGrotesque Regular";
+    src: url(/fonts/BrandonGrotesque/BrandonGrotesque-Regular.otf);
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family:"BrandonGrotesque LightItalic";
+    src: url(/fonts/BrandonGrotesque/BrandonGrotesque-LightItalic.otf);
+    font-weight:normal;
+    font-style:normal;
+}

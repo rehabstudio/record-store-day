@@ -1,0 +1,23 @@
+.album-title {
+  position: absolute;
+  bottom: 105%;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  h1 {
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    .wf-active & {
+      font-family: "BrandonGrotesque Bold", serif;
+    }
+  }
+
+  span {
+    color: #898989;
+    display: block;
+  }
+}

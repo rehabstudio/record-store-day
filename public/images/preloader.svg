@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="67px" height="67px" viewBox="0 0 67 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>vinyl</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Preloader" transform="translate(-174.000000, -334.000000)" stroke="#FFFFFF">
+            <g id="vinyl" transform="translate(175.000000, 335.000000)">
+                <ellipse id="Oval-1" cx="32.5" cy="32.5" rx="32.2617188" ry="32.2617187"></ellipse>
+                <ellipse id="Oval-1" cx="32.5" cy="32.5" rx="11.386489" ry="11.386489"></ellipse>
+                <path d="M7.02837776,32.5 C7.02837776,46.5675885 18.4324115,57.9716222 32.5,57.9716222 L32.5,57.9716222 M57.9716222,32.5 C57.9716222,18.4324115 46.5675885,7.02837776 32.5,7.02837776" id="Oval-1"></path>
+                <path d="M10.0141889,32.5 C10.0141889,44.9185706 20.0814294,54.9858111 32.5,54.9858111 L32.5,54.9858111 M54.9858111,32.5 C54.9858111,20.0814294 44.9185706,10.0141889 32.5,10.0141889" id="Oval-1"></path>
+                <ellipse id="Oval-1" cx="32.5" cy="32.5" rx="1.24083534" ry="1.24083534"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

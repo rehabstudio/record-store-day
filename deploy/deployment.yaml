@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: record-store-day
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: record-store-day
+    spec:
+      containers:
+        - name: record-store-day
+          image: 'gcr.io/record-store-day/record-store-day:v1.1.12'
+          ports:
+            - containerPort: 3000

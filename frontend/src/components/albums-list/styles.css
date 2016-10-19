@@ -1,0 +1,60 @@
+body{
+    overflow-x: hidden;
+}
+
+.albums-list-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.albums-list {
+    list-style-type: none;
+    display: flex;
+
+    /*overflow-x: scroll;*/
+    margin: 0;
+    padding: 0;
+}
+.albums-list li {
+    flex-shrink: 0;
+    cursor: pointer;
+    width: 160px;
+    height: 160px;
+    transition: opacity 120ms ease-in-out;
+    &.selected{
+        opacity: 0.5;
+    }
+    &:nth-of-type(odd) {
+        background: #000000;
+    }
+
+    &:nth-of-type(even) {
+        background: #131313;
+    }
+    @media (max-width: 600px) {
+      width: 100px;
+      height: 100px;
+    }
+}
+.albums-list img {
+    max-width: 100%;
+    /*opacity: 0;*/
+}
+.albums-list p {
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.drag-album{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.3);
+}

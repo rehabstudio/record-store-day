@@ -1,0 +1,202 @@
+.audio-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.audio-player .vinyl {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 1.8s infinite linear;
+  animation-play-state: paused;
+  position: absolute;
+  z-index: -1;
+  img {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  &.visible{
+      z-index: 2;
+  }
+  &.spining {
+    animation-play-state: running;
+  }
+}
+.audio-player .label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 33%;
+  height: 33%;
+  will-change: transform;
+  transform: translate(-50%, -50%);
+
+  > svg {
+    position: absolute;
+  }
+
+  .pin,
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.audio-player .pin{
+
+  animation: rotate 1.8s infinite linear;
+  animation-play-state: paused;
+  animation-direction: reverse;
+
+  img{
+    max-width: 1vmin;
+    height: 1vmin;
+  }
+
+  &.spining {
+    animation-play-state: running;
+  }
+}
+
+.audio-player .reflect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: rotate 1.8s infinite linear;
+  animation-play-state: paused;
+  animation-direction: reverse;
+  opacity: 0.3;
+
+  &.spining {
+    animation-play-state: running;
+  }
+}
+
+.audio-player .plate {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top:0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 101%;
+    flex-basis: 100%;
+  }
+
+}
+
+.audio-player .arm-base{
+    position: absolute;
+    width: 50%;
+    left: 50%;
+
+    img{
+      width: 40%;
+      left: 98%;
+      position: absolute;
+      z-index: 4;
+    }
+}
+
+.audio-player .needle {
+  position: absolute;
+  z-index: 3;
+  top: 3%;
+  right: -19%;
+  width: 37%;
+  transform-origin: 77% 9%;
+  transition: 0.3s transform ease;
+
+  &.dragging {
+    transition: none;
+  }
+
+  img {
+    width: 100%;
+    -webkit-user-drag: none;
+  }
+
+  .arm{
+    transform-origin: 77% 9%;
+    transition: 0.3s transform ease;
+    transform: rotateX(0deg);
+  }
+
+  .lift{
+    transform: rotateX(8deg);
+  }
+
+  .arm-shadow{
+    opacity: 0.2;
+    transition:opacity 1s transform ease;
+  }
+
+  .liftshadow{
+    opacity: 0.5;
+  }
+
+
+  .drag-handle {
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+    left: 0;
+    height: 30%;
+    cursor: move;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.tutorial-needle {
+  position: absolute;
+  bottom: -10%;
+  left: 96%;
+  width: 40%;
+  font-family: "BrandonGrotesque LightItalic", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: 0.3s opacity ease;
+
+  img {
+    position: absolute;
+    left: 45%;
+    bottom: 110%;
+    max-width: 20%;
+    transform: translate(-50%, 0);
+  }
+
+  .needle-panned & {
+    opacity: 0;
+  }
+
+  @media (max-width: 800px) {
+    bottom: -15%;
+    left: 70%;
+  }
+  @media (max-width: 600px) {
+    width: 60%;
+    bottom: -27%;
+    left: 65%;
+  }
+}

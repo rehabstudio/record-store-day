@@ -1,0 +1,6 @@
+server:
+  build: .
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - "80:3000"
